@@ -9,44 +9,44 @@ stages:
       size: 6188
     - path: scripts/data_scripts/get_features
       hash: md5
-      md5: 1997648a9d46f3d73730c26dec56adac
-      size: 1376
+      md5: 623b747756a43b667c9f75176083be5d
+      size: 1368
     outs:
-    - path: datasets/stage1
+    - path: data/stage1
       hash: md5
       md5: 196fbd6c577aa770d841c9a6528677d9.dir
       size: 6098
       nfiles: 1
   fill_na:
-    cmd: python3 scripts/data_scripts/fill_na datasets/stage1/train.csv
+    cmd: python3 scripts/data_scripts/fill_na data/stage1/train.csv
     deps:
-    - path: datasets/stage1/train.csv
+    - path: data/stage1/train.csv
       hash: md5
       md5: c985bc31b662025a7c42ae07e84a7a69
       size: 6098
     - path: scripts/data_scripts/fill_na
       hash: md5
-      md5: 0d1a4b2d1314ed38b49d7b53d236db19
-      size: 2774
+      md5: 46c23b005af999fd0902a067cc32d442
+      size: 2766
     outs:
-    - path: datasets/stage2
+    - path: data/stage2
       hash: md5
       md5: 196fbd6c577aa770d841c9a6528677d9.dir
       size: 6098
       nfiles: 1
   text_to_numeric:
-    cmd: python3 scripts/data_scripts/change_text_to_numeric datasets/stage2/train.csv
+    cmd: python3 scripts/data_scripts/change_text_to_numeric data/stage2/train.csv
     deps:
-    - path: datasets/stage2/train.csv
+    - path: data/stage2/train.csv
       hash: md5
       md5: c985bc31b662025a7c42ae07e84a7a69
       size: 6098
     - path: scripts/data_scripts/change_text_to_numeric
       hash: md5
-      md5: 418ceb5be9affc833da25105632388b8
-      size: 4264
+      md5: 2380c4617de9bdec35de4a4d1ab578c8
+      size: 4256
     outs:
-    - path: datasets/stage3
+    - path: data/stage3
       hash: md5
       md5: 7d1de39118b11cdafebef820281cf63c.dir
       size: 2431
