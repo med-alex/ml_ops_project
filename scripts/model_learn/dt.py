@@ -28,7 +28,7 @@ model = XGBClassifier(n_estimators=10_000,
                       learning_rate=0.01,
                       eval_metric="mlogloss")
 
-model.fit(X, y, verbose=100)
+model.fit(X, y)
 
 with open(f_output, "wb") as fd:
     pickle.dump(model, fd)
