@@ -1,5 +1,5 @@
 split:
   split_ratio: 0.3
 train:
-  max_depth: 3
-  n_estimators: 10_000
+  max_depth: 1
+  n_estimators: 1_0
