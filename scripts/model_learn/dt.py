@@ -25,12 +25,10 @@ y = df.iloc[:, -1]
 
 model = XGBClassifier(n_estimators=10_000,
                       max_depth=3,
-                      learning_rate=0.01)
+                      learning_rate=0.01,
+                      eval_metric="mlogloss")
 
-model.fit(X, y,
-          early_stopping_rounds=1000,
-          eval_metric="mlogloss",
-          verbose=100)
+model.fit(X, y, verbose=100)
 
 with open(f_output, "wb") as fd:
     pickle.dump(model, fd)
