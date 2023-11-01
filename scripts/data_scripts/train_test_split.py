@@ -20,7 +20,7 @@ os.makedirs(os.path.join("data", "stage4"), exist_ok=True)
 
 p_split_ratio = params["split_ratio"]
 
-df = pd.read_csv(f_input)
+df = pd.read_csv(f_input, header=None)
 X = df.iloc[:, [i for i in range(6 + 1)]]
 y = df.iloc[:, -1]
 
