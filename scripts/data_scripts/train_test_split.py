@@ -26,5 +26,5 @@ y = df.iloc[:, -1]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=p_split_ratio)
 
-pd.concat([y_train, X_train], axis=1).to_csv(f_output_train, header=None, index=None)
-pd.concat([y_test, X_test], axis=1).to_csv(f_output_test, header=None, index=None)
+pd.concat([X_train, y_train], axis=1).to_csv(f_output_train, header=None, index=None)
+pd.concat([X_test, y_test], axis=1).to_csv(f_output_test, header=None, index=None)

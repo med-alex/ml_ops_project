@@ -23,8 +23,8 @@ df = pd.read_csv(f_input, header=None)
 X = df.iloc[:, [i for i in range(6 + 1)]]
 y = df.iloc[:, -1]
 
-model = XGBClassifier(n_estimators=10_000,
-                      max_depth=3,
+model = XGBClassifier(n_estimators=p_n_estimators,
+                      max_depth=p_max_depth,
                       learning_rate=0.01,
                       eval_metric="mlogloss")
 
