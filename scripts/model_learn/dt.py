@@ -19,7 +19,7 @@ params = yaml.safe_load(open("params.yaml"))["train"]
 p_n_estimators = params["n_estimators"]
 p_max_depth = params["max_depth"]
 
-df = pd.read_csv(f_input)
+df = pd.read_csv(f_input, header=None)
 X = df.iloc[:, [i for i in range(6 + 1)]]
 y = df.iloc[:, -1]
 
